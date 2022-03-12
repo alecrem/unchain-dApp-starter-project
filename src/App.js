@@ -17,7 +17,7 @@ const App = () => {
   /**
   * デプロイされたコントラクトのアドレスを保持する変数を作成
   */
-  const contractAddress = "0xBAD20e7EdB6367E0E18067f80939bA2291C069bB";
+  const contractAddress = "0x5992d6ce60CF0Dbb153E79d3fC9092EBC25d8E6E";
    /**
   * ABIの内容を参照する変数を作成
   */
@@ -36,9 +36,10 @@ const App = () => {
       /* UIに必要なのは、アドレス、タイムスタンプ、メッセージだけなので、以下のように設定 */
       const wavesCleaned = waves.map(wave => {
         return {
-        address: wave.waver,
-        timestamp: new Date(wave.timestamp * 1000),
-        message: wave.message,
+          address: wave.waver,
+          timestamp: new Date(wave.timestamp * 1000),
+          message: wave.message,
+          rarity: wave.rarity,
         };
       });
   
@@ -58,14 +59,15 @@ const App = () => {
   useEffect(() => {
     let wavePortalContract;
   
-    const onNewWave = (from, timestamp, message) => {
-      console.log("NewWave", from, timestamp, message);
+    const onNewWave = (from, timestamp, message, rarity) => {
+      console.log("NewWave", from, timestamp, message, rarity);
       setAllWaves(prevState => [
       ...prevState,
       {
         address: from,
         timestamp: new Date(timestamp * 1000),
         message: message,
+        rarity: rarity,
       },
       ]);
     };
@@ -231,6 +233,7 @@ const App = () => {
               <div>Address: {wave.address}</div>
               <div>Time: {wave.timestamp.toString()}</div>
               <div>Message: {wave.message}</div>
+              <div>Rarity: {wave.rarity}</div>
             </div>)
         })
         )}
