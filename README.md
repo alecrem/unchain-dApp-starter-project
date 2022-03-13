@@ -1,18 +1,6 @@
-# Create your first dApp.
+# Basic ETH dApp React frontend
 
-![](public/ETH-banner-blur.png)
+- [Smart contract counterpart repository](https://github.com/alecrem/unchain-my-wave-portal)
+- Frontend deployed here: https://my-wave-portal-xi.vercel.app/
 
-このコースを始めるには、下記のステップを実行してください。
-
-1. あなたのGithubアカウントにこのレポジトリをフォークしましょう。
-
-2. クローンしたレポジトリをあなたのローカル環境にダウンロードしましょう。
-
-3. ターミナルを開き、ディレクトリのルートで `npm install` を実行します。
-
-4. `npm run start` を実行してプロジェクトを開始します。
-
-5. コーディングを始めましょう。
-
-----
-Banner logo is created by modifying "ETH diamond" © [Ethereum Foundation](https://ethereum.org/en/assets/) (Licensed under CC BY 4.0).
+Warning: the smart contract is deployed on the Rinkeby Test Network. Remember to switch your wallet to Rinkeby before connecting it to the website.
